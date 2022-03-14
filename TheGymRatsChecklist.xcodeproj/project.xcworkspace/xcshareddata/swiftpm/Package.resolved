@@ -9,6 +9,24 @@
           "revision": "7d07b954afdeffeac7c3ed913296f7d73b600003",
           "version": "0.3.0"
         }
+      },
+      {
+        "package": "ElegantCalendar",
+        "repositoryURL": "https://github.com/ThasianX/ElegantCalendar",
+        "state": {
+          "branch": "master",
+          "revision": "d446234f27e60f5bef15f91c35d384f388ff2c7d",
+          "version": null
+        }
+      },
+      {
+        "package": "ElegantPages",
+        "repositoryURL": "https://github.com/ThasianX/ElegantPages",
+        "state": {
+          "branch": null,
+          "revision": "d598ce4824c40296decc84eae5b3c042d3dff842",
+          "version": "1.4.2"
+        }
       }
     ]
   },

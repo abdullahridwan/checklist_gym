@@ -16,6 +16,12 @@ struct ContentView: View {
                 .tabItem({
                     Label("Home", systemImage: "house")
                 })
+            
+            SettingsPage()
+                .tabItem({
+                    Label("Settings", systemImage: "gear")
+                })
+            
         }
     }
 }

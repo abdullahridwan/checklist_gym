@@ -7,41 +7,50 @@
 
 import Foundation
 
-struct CalendarInfo{
+class CalendarInfo: ObservableObject{
     private var counter: Int = 0
-    var someDate: Date
+    @Published var weekDays: Array<Int> = [Int]()
+    @Published var monthName: String = "Getting..."
+    @Published var todaysDate: Int = 0
     
-    init(){
-        someDate = Calendar.current.date(byAdding: .weekOfYear, value: counter, to: Date())!
-    }
+
     
     
     //get the dates in the current week. Use Core Data to get the info related to that Date
-    func getDates() -> [Date]{
+     func getDates(){
         let calendar = Calendar.current
-        var someDayOfWeek = calendar.component(.weekday, from: someDate)
-        var someWeekDays = calendar.range(of: .weekday, in: .weekOfYear, for: someDate)!
-        var someDays = (someWeekDays.lowerBound ..< someWeekDays.upperBound)
+        let someDate = Calendar.current.date(byAdding: .weekOfYear, value: counter, to: Date())!
+        let someDayOfWeek = calendar.component(.weekday, from: someDate)
+        let someWeekDays = calendar.range(of: .weekday, in: .weekOfYear, for: someDate)!
+        let someDays = (someWeekDays.lowerBound ..< someWeekDays.upperBound)
             .compactMap { calendar.date(byAdding: .day, value: $0 - someDayOfWeek, to: someDate) }
-        return someDays
+        weekDays = someDays.map { calendar.dateComponents([.day], from: $0).day!}
+        todaysDate = calendar.dateComponents([.day], from: Date()).day!
     }
     
-    mutating func updateWeek(change: String){
+    
+    
+     func updateWeek(change: String){
         if change == "dec"{
             self.counter = self.counter - 1
         }
-        else if (change == "inc"){
+        if (change == "inc"){
             self.counter = self.counter + 1
-        }else{
-            self.counter = self.counter + 0
         }
+         if (change == "zero"){
+             self.counter = 0
+         }
+        getDates()
+        getMonth()
     }
     
-    func getMonth() -> String {
+    func getMonth() {
+        let someDate = Calendar.current.date(byAdding: .weekOfYear, value: counter, to: Date())!
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "LLLL"
         let monthString = dateFormatter.string(from: someDate)
-        return monthString
+        monthName = monthString
     }
+
     
 }

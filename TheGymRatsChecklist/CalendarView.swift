@@ -8,40 +8,100 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State var calendarInfo = CalendarInfo()
-    private var sixColumnGrid: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
-    
+    @EnvironmentObject var calendarInfo: CalendarInfo
+    var sevenColumnGrid: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
+    let dateFormatter = DateFormatter()
+    @State var datePressed: Int = 0
     
     var body: some View {
-        ScrollView(.vertical){
-            HStack{
-                Image(systemName: "chevron.left")
-                Spacer()
-                Text(calendarInfo.getMonth())
-                Spacer()
-                Image(systemName: "chevron.right")
+        NavigationView {
+            ScrollView(.vertical){
+                MonthAndButons(calendarInfo: _calendarInfo)
+                    .padding(.top)
+                WeekDayNamesComponent(sevenColumnGrid: sevenColumnGrid)
+                WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, sevenColumnGrid: sevenColumnGrid)
             }
-            
-            LazyVGrid(columns: sixColumnGrid, spacing: 20){
-                ForEach((0...7), id:\.self){_ in
-                    
-                }
-            }
-            
-            
-            
-            
-            
-        }.padding()
+            .padding(.horizontal)
+            .onAppear(perform: {
+                calendarInfo.updateWeek(change: "none")
+                datePressed = calendarInfo.todaysDate
+            })
+            .navigationTitle("Calendar")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    Button(action: {
+                        calendarInfo.updateWeek(change: "zero")
+                        datePressed = calendarInfo.todaysDate
+                    }, label: {
+                        Image(systemName: "house")
+                    })
+                })
+            })
+        }
     }
 }
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView().environmentObject(CalendarInfo())
     }
 }
 
 
 
 
+
+struct MonthAndButons: View {
+    @EnvironmentObject var calendarInfo: CalendarInfo
+    var body: some View {
+        HStack{
+            Button(action: {
+                calendarInfo.updateWeek(change: "dec")
+            }, label: {
+                Image(systemName: "chevron.left")
+            })
+            
+            Spacer()
+            Text(calendarInfo.monthName)
+            Spacer()
+            Button(action: {
+                calendarInfo.updateWeek(change: "inc")
+            }, label: {
+                Image(systemName: "chevron.right")
+            })
+        }
+    }
+}
+
+struct WeekDayNamesComponent: View {
+    var sevenColumnGrid: [GridItem]
+    var weekDayNames: [String] = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"]
+
+    var body: some View {
+        LazyVGrid(columns: sevenColumnGrid, spacing: 20){
+            ForEach(weekDayNames, id: \.self){dayName in
+                Text(dayName).foregroundColor(Color.gray)
+            }
+        }
+    }
+}
+
+struct WeekDayNumbersComponent: View {
+    @EnvironmentObject var calendarInfo: CalendarInfo
+    @Binding var datePressed: Int
+    var sevenColumnGrid: [GridItem]
+    var body: some View {
+        LazyVGrid(columns: sevenColumnGrid, spacing: 20){
+            ForEach(calendarInfo.weekDays, id:\.self){d in
+                VStack {
+                    
+                    Text(String(d))
+                        .foregroundColor(d == datePressed ? Color.red : Color.black)
+                        .onTapGesture {
+                            datePressed = d
+                        }
+                }
+            }
+        }
+    }
+}

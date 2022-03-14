@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B567FDDD27DE68B8004B3914 /* AddItemSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567FDDC27DE68B8004B3914 /* AddItemSheet.swift */; };
+		B567FDE027DE6D16004B3914 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B567FDDF27DE6D16004B3914 /* ConfettiSwiftUI */; };
+		B567FDE227DEE79E004B3914 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567FDE127DEE79E004B3914 /* HomePage.swift */; };
+		B5C8EA2F27D9BC46001B3938 /* TheGymRatsChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA2E27D9BC46001B3938 /* TheGymRatsChecklistApp.swift */; };
+		B5C8EA3127D9BC46001B3938 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA3027D9BC46001B3938 /* ContentView.swift */; };
+		B5C8EA3327D9BC48001B3938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C8EA3227D9BC48001B3938 /* Assets.xcassets */; };
+		B5C8EA3627D9BC48001B3938 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C8EA3527D9BC48001B3938 /* Preview Assets.xcassets */; };
+		B5C8EA4027D9BC48001B3938 /* TheGymRatsChecklistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA3F27D9BC48001B3938 /* TheGymRatsChecklistTests.swift */; };
+		B5C8EA4A27D9BC48001B3938 /* TheGymRatsChecklistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA4927D9BC48001B3938 /* TheGymRatsChecklistUITests.swift */; };
+		B5C8EA4C27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA4B27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift */; };
+		B5C8EA5927DAA55D001B3938 /* TappableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA5827DAA55D001B3938 /* TappableCircle.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5C8EA3C27D9BC48001B3938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5C8EA2327D9BC46001B3938 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5C8EA2A27D9BC46001B3938;
+			remoteInfo = TheGymRatsChecklist;
+		};
+		B5C8EA4627D9BC48001B3938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5C8EA2327D9BC46001B3938 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5C8EA2A27D9BC46001B3938;
+			remoteInfo = TheGymRatsChecklist;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B567FDDC27DE68B8004B3914 /* AddItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemSheet.swift; sourceTree = "<group>"; };
+		B567FDE127DEE79E004B3914 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		B5C8EA2B27D9BC46001B3938 /* TheGymRatsChecklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGymRatsChecklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C8EA2E27D9BC46001B3938 /* TheGymRatsChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistApp.swift; sourceTree = "<group>"; };
+		B5C8EA3027D9BC46001B3938 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5C8EA3227D9BC48001B3938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5C8EA3527D9BC48001B3938 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5C8EA3B27D9BC48001B3938 /* TheGymRatsChecklistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGymRatsChecklistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C8EA3F27D9BC48001B3938 /* TheGymRatsChecklistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistTests.swift; sourceTree = "<group>"; };
+		B5C8EA4527D9BC48001B3938 /* TheGymRatsChecklistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGymRatsChecklistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C8EA4927D9BC48001B3938 /* TheGymRatsChecklistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistUITests.swift; sourceTree = "<group>"; };
+		B5C8EA4B27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5C8EA5827DAA55D001B3938 /* TappableCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableCircle.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5C8EA2827D9BC46001B3938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B567FDE027DE6D16004B3914 /* ConfettiSwiftUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C8EA3827D9BC48001B3938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C8EA4227D9BC48001B3938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5C8EA2227D9BC46001B3938 = {
+			isa = PBXGroup;
+			children = (
+				B5C8EA2D27D9BC46001B3938 /* TheGymRatsChecklist */,
+				B5C8EA3E27D9BC48001B3938 /* TheGymRatsChecklistTests */,
+				B5C8EA4827D9BC48001B3938 /* TheGymRatsChecklistUITests */,
+				B5C8EA2C27D9BC46001B3938 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5C8EA2C27D9BC46001B3938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8EA2B27D9BC46001B3938 /* TheGymRatsChecklist.app */,
+				B5C8EA3B27D9BC48001B3938 /* TheGymRatsChecklistTests.xctest */,
+				B5C8EA4527D9BC48001B3938 /* TheGymRatsChecklistUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5C8EA2D27D9BC46001B3938 /* TheGymRatsChecklist */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8EA2E27D9BC46001B3938 /* TheGymRatsChecklistApp.swift */,
+				B5C8EA3027D9BC46001B3938 /* ContentView.swift */,
+				B5C8EA3227D9BC48001B3938 /* Assets.xcassets */,
+				B5C8EA3427D9BC48001B3938 /* Preview Content */,
+				B5C8EA5827DAA55D001B3938 /* TappableCircle.swift */,
+				B567FDDC27DE68B8004B3914 /* AddItemSheet.swift */,
+				B567FDE127DEE79E004B3914 /* HomePage.swift */,
+			);
+			path = TheGymRatsChecklist;
+			sourceTree = "<group>";
+		};
+		B5C8EA3427D9BC48001B3938 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8EA3527D9BC48001B3938 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5C8EA3E27D9BC48001B3938 /* TheGymRatsChecklistTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8EA3F27D9BC48001B3938 /* TheGymRatsChecklistTests.swift */,
+			);
+			path = TheGymRatsChecklistTests;
+			sourceTree = "<group>";
+		};
+		B5C8EA4827D9BC48001B3938 /* TheGymRatsChecklistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8EA4927D9BC48001B3938 /* TheGymRatsChecklistUITests.swift */,
+				B5C8EA4B27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift */,
+			);
+			path = TheGymRatsChecklistUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5C8EA2A27D9BC46001B3938 /* TheGymRatsChecklist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5C8EA4F27D9BC48001B3938 /* Build configuration list for PBXNativeTarget "TheGymRatsChecklist" */;
+			buildPhases = (
+				B5C8EA2727D9BC46001B3938 /* Sources */,
+				B5C8EA2827D9BC46001B3938 /* Frameworks */,
+				B5C8EA2927D9BC46001B3938 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheGymRatsChecklist;
+			packageProductDependencies = (
+				B567FDDF27DE6D16004B3914 /* ConfettiSwiftUI */,
+			);
+			productName = TheGymRatsChecklist;
+			productReference = B5C8EA2B27D9BC46001B3938 /* TheGymRatsChecklist.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5C8EA3A27D9BC48001B3938 /* TheGymRatsChecklistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5C8EA5227D9BC48001B3938 /* Build configuration list for PBXNativeTarget "TheGymRatsChecklistTests" */;
+			buildPhases = (
+				B5C8EA3727D9BC48001B3938 /* Sources */,
+				B5C8EA3827D9BC48001B3938 /* Frameworks */,
+				B5C8EA3927D9BC48001B3938 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5C8EA3D27D9BC48001B3938 /* PBXTargetDependency */,
+			);
+			name = TheGymRatsChecklistTests;
+			productName = TheGymRatsChecklistTests;
+			productReference = B5C8EA3B27D9BC48001B3938 /* TheGymRatsChecklistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5C8EA4427D9BC48001B3938 /* TheGymRatsChecklistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5C8EA5527D9BC48001B3938 /* Build configuration list for PBXNativeTarget "TheGymRatsChecklistUITests" */;
+			buildPhases = (
+				B5C8EA4127D9BC48001B3938 /* Sources */,
+				B5C8EA4227D9BC48001B3938 /* Frameworks */,
+				B5C8EA4327D9BC48001B3938 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5C8EA4727D9BC48001B3938 /* PBXTargetDependency */,
+			);
+			name = TheGymRatsChecklistUITests;
+			productName = TheGymRatsChecklistUITests;
+			productReference = B5C8EA4527D9BC48001B3938 /* TheGymRatsChecklistUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5C8EA2327D9BC46001B3938 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					B5C8EA2A27D9BC46001B3938 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					B5C8EA3A27D9BC48001B3938 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = B5C8EA2A27D9BC46001B3938;
+					};
+					B5C8EA4427D9BC48001B3938 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = B5C8EA2A27D9BC46001B3938;
+					};
+				};
+			};
+			buildConfigurationList = B5C8EA2627D9BC46001B3938 /* Build configuration list for PBXProject "TheGymRatsChecklist" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5C8EA2227D9BC46001B3938;
+			packageReferences = (
+				B567FDDE27DE6D15004B3914 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
+			productRefGroup = B5C8EA2C27D9BC46001B3938 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5C8EA2A27D9BC46001B3938 /* TheGymRatsChecklist */,
+				B5C8EA3A27D9BC48001B3938 /* TheGymRatsChecklistTests */,
+				B5C8EA4427D9BC48001B3938 /* TheGymRatsChecklistUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5C8EA2927D9BC46001B3938 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C8EA3627D9BC48001B3938 /* Preview Assets.xcassets in Resources */,
+				B5C8EA3327D9BC48001B3938 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C8EA3927D9BC48001B3938 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C8EA4327D9BC48001B3938 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5C8EA2727D9BC46001B3938 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B567FDE227DEE79E004B3914 /* HomePage.swift in Sources */,
+				B5C8EA5927DAA55D001B3938 /* TappableCircle.swift in Sources */,
+				B5C8EA3127D9BC46001B3938 /* ContentView.swift in Sources */,
+				B567FDDD27DE68B8004B3914 /* AddItemSheet.swift in Sources */,
+				B5C8EA2F27D9BC46001B3938 /* TheGymRatsChecklistApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C8EA3727D9BC48001B3938 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C8EA4027D9BC48001B3938 /* TheGymRatsChecklistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C8EA4127D9BC48001B3938 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C8EA4A27D9BC48001B3938 /* TheGymRatsChecklistUITests.swift in Sources */,
+				B5C8EA4C27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5C8EA3D27D9BC48001B3938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5C8EA2A27D9BC46001B3938 /* TheGymRatsChecklist */;
+			targetProxy = B5C8EA3C27D9BC48001B3938 /* PBXContainerItemProxy */;
+		};
+		B5C8EA4727D9BC48001B3938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5C8EA2A27D9BC46001B3938 /* TheGymRatsChecklist */;
+			targetProxy = B5C8EA4627D9BC48001B3938 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B5C8EA4D27D9BC48001B3938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5C8EA4E27D9BC48001B3938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5C8EA5027D9BC48001B3938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheGymRatsChecklist/Preview Content\"";
+				DEVELOPMENT_TEAM = DP35G3JNX9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahridwan.TheGymRatsChecklist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5C8EA5127D9BC48001B3938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheGymRatsChecklist/Preview Content\"";
+				DEVELOPMENT_TEAM = DP35G3JNX9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahridwan.TheGymRatsChecklist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5C8EA5327D9BC48001B3938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP35G3JNX9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahridwan.TheGymRatsChecklistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGymRatsChecklist.app/TheGymRatsChecklist";
+			};
+			name = Debug;
+		};
+		B5C8EA5427D9BC48001B3938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP35G3JNX9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahridwan.TheGymRatsChecklistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGymRatsChecklist.app/TheGymRatsChecklist";
+			};
+			name = Release;
+		};
+		B5C8EA5627D9BC48001B3938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP35G3JNX9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahridwan.TheGymRatsChecklistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheGymRatsChecklist;
+			};
+			name = Debug;
+		};
+		B5C8EA5727D9BC48001B3938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP35G3JNX9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahridwan.TheGymRatsChecklistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheGymRatsChecklist;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5C8EA2627D9BC46001B3938 /* Build configuration list for PBXProject "TheGymRatsChecklist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C8EA4D27D9BC48001B3938 /* Debug */,
+				B5C8EA4E27D9BC48001B3938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5C8EA4F27D9BC48001B3938 /* Build configuration list for PBXNativeTarget "TheGymRatsChecklist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C8EA5027D9BC48001B3938 /* Debug */,
+				B5C8EA5127D9BC48001B3938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5C8EA5227D9BC48001B3938 /* Build configuration list for PBXNativeTarget "TheGymRatsChecklistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C8EA5327D9BC48001B3938 /* Debug */,
+				B5C8EA5427D9BC48001B3938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5C8EA5527D9BC48001B3938 /* Build configuration list for PBXNativeTarget "TheGymRatsChecklistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C8EA5627D9BC48001B3938 /* Debug */,
+				B5C8EA5727D9BC48001B3938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B567FDDE27DE6D15004B3914 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B567FDDF27DE6D16004B3914 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B567FDDE27DE6D15004B3914 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B5C8EA2327D9BC46001B3938 /* Project object */;
+}

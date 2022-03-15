@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct DateItem {
+    var day: Date
+    var dayID: UUID
+    var progress: Float
+    var
+}
+
 class CalendarInfo: ObservableObject{
     private var counter: Int = 0
     @Published var weekDays: Array<Int> = [Int]()

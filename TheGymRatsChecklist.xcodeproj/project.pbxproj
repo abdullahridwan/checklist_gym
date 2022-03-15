@@ -17,6 +17,8 @@
 		B567FDF827DFCFDF004B3914 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567FDF727DFCFDF004B3914 /* CalendarViewModel.swift */; };
 		B567FDFA27E00B70004B3914 /* DisplayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567FDF927E00B70004B3914 /* DisplayDate.swift */; };
 		B567FE0027E02509004B3914 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B567FDFE27E02509004B3914 /* Database.xcdatamodeld */; };
+		B567FE0227E02843004B3914 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567FE0127E02843004B3914 /* CoreDataManager.swift */; };
+		B567FE0427E02B43004B3914 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567FE0327E02B43004B3914 /* ItemViewModel.swift */; };
 		B5C8EA2F27D9BC46001B3938 /* TheGymRatsChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA2E27D9BC46001B3938 /* TheGymRatsChecklistApp.swift */; };
 		B5C8EA3127D9BC46001B3938 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA3027D9BC46001B3938 /* ContentView.swift */; };
 		B5C8EA3327D9BC48001B3938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C8EA3227D9BC48001B3938 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		B567FDF727DFCFDF004B3914 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		B567FDF927E00B70004B3914 /* DisplayDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDate.swift; sourceTree = "<group>"; };
 		B567FDFF27E02509004B3914 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		B567FE0127E02843004B3914 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B567FE0327E02B43004B3914 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		B5C8EA2B27D9BC46001B3938 /* TheGymRatsChecklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGymRatsChecklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C8EA2E27D9BC46001B3938 /* TheGymRatsChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistApp.swift; sourceTree = "<group>"; };
 		B5C8EA3027D9BC46001B3938 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				B5C8EA3227D9BC48001B3938 /* Assets.xcassets */,
 				B5C8EA3427D9BC48001B3938 /* Preview Content */,
 				B567FDFE27E02509004B3914 /* Database.xcdatamodeld */,
+				B567FE0127E02843004B3914 /* CoreDataManager.swift */,
+				B567FE0327E02B43004B3914 /* ItemViewModel.swift */,
 			);
 			path = TheGymRatsChecklist;
 			sourceTree = "<group>";
@@ -326,11 +332,13 @@
 				B5C8EA5927DAA55D001B3938 /* TappableCircle.swift in Sources */,
 				B5C8EA3127D9BC46001B3938 /* ContentView.swift in Sources */,
 				B567FDFA27E00B70004B3914 /* DisplayDate.swift in Sources */,
+				B567FE0427E02B43004B3914 /* ItemViewModel.swift in Sources */,
 				B567FDE427DEE975004B3914 /* SettingsPage.swift in Sources */,
 				B567FE0027E02509004B3914 /* Database.xcdatamodeld in Sources */,
 				B567FDDD27DE68B8004B3914 /* AddItemSheet.swift in Sources */,
 				B567FDF827DFCFDF004B3914 /* CalendarViewModel.swift in Sources */,
 				B5C8EA2F27D9BC46001B3938 /* TheGymRatsChecklistApp.swift in Sources */,
+				B567FE0227E02843004B3914 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct DateItem {
+struct DateItem: Codable {
     var day: Date
     var dayID: UUID
     var progress: Float
-    var
+    var tasks: String
 }
 
 class CalendarInfo: ObservableObject{

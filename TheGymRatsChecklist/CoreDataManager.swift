@@ -17,7 +17,7 @@ class CoreDataManager{
         return persistentContainer.viewContext
     }
     private init() {
-        persistentContainer = NSPersistentContainer(name: "ToDoAppModel")
+        persistentContainer = NSPersistentContainer(name: "Database")
         persistentContainer.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Unable to initialize CD Stack \(error)")
@@ -45,9 +45,9 @@ class CoreDataManager{
     }
     
     
-    func getAllDates() -> [ToDoItem]{
+    func getAllDates() -> [DateItem]{
         //make a request
-        let request = NSFetchRequest<ToDoItem>(entityName: "ToDoItem")
+        let request = NSFetchRequest<DateItem>(entityName: "DayModelItem")
         //execute request
         do{
             return try viewContext.fetch(request)
@@ -58,12 +58,12 @@ class CoreDataManager{
     
     
     
-    func updateToDo(t: ToDoItem){
+    func updateToDo(t: DateItem ){
         //update the ToDoItem based on its nsmanagedobjectid
         //save view context
         save()
     }
-    func deleteToDo(t: ToDoItem){
+    func deleteToDo(t: DateItem){
         viewContext.delete(t)
         save()
     }

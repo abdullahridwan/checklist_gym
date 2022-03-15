@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomePage: View {
+    //@EnvironmentObject var calendarInfo: CalendarInfo
     @State var items:[String] = ["Creatine", "Weights", "Biotin"]
     @State private var addIemSheet: Bool = false
     

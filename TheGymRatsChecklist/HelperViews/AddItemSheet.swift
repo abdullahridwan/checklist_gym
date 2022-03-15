@@ -22,7 +22,8 @@ struct AddItemSheet: View {
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button("Done"){
-                        items.append(itemName)
+                        let trimmedString = itemName.trimmingCharacters(in: .whitespacesAndNewlines)
+                        items.append(trimmedString)
                         addItemSheet.toggle()
                     }
                 })

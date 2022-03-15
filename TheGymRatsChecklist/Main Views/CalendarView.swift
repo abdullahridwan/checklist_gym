@@ -19,6 +19,7 @@ struct CalendarView: View {
                 MonthAndButons(calendarInfo: _calendarInfo)
                     .padding(.top)
                 WeekDayNamesComponent(sevenColumnGrid: sevenColumnGrid)
+                
                 WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, sevenColumnGrid: sevenColumnGrid)
             }
             .padding(.horizontal)
@@ -73,6 +74,8 @@ struct MonthAndButons: View {
     }
 }
 
+
+
 struct WeekDayNamesComponent: View {
     var sevenColumnGrid: [GridItem]
     var weekDayNames: [String] = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"]
@@ -94,9 +97,9 @@ struct WeekDayNumbersComponent: View {
         LazyVGrid(columns: sevenColumnGrid, spacing: 20){
             ForEach(calendarInfo.weekDays, id:\.self){d in
                 VStack {
-                    
-                    Text(String(d))
-                        .foregroundColor(d == datePressed ? Color.red : Color.black)
+                    //Text(String(d))
+                    DisplayDate(dateNum: d, progress: 0.50)
+                        .foregroundColor(calendarInfo.getTodaysMonth() == calendarInfo.monthName && d == datePressed ? Color.red : Color.black)
                         .onTapGesture {
                             datePressed = d
                         }
@@ -105,3 +108,4 @@ struct WeekDayNumbersComponent: View {
         }
     }
 }
+

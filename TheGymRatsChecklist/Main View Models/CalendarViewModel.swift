@@ -13,7 +13,20 @@ class CalendarInfo: ObservableObject{
     @Published var monthName: String = "Getting..."
     @Published var todaysDate: Int = 0
     
-
+    
+    func getTodaysDate() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "EEEE MMMM, dd"
+        let formattedDate = format.string(from: Date())
+        return formattedDate
+    }
+    
+    func getTodaysMonth() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "MMMM"
+        let formattedDate = format.string(from: Date())
+        return formattedDate
+    }
     
     
     //get the dates in the current week. Use Core Data to get the info related to that Date
@@ -27,8 +40,6 @@ class CalendarInfo: ObservableObject{
         weekDays = someDays.map { calendar.dateComponents([.day], from: $0).day!}
         todaysDate = calendar.dateComponents([.day], from: Date()).day!
     }
-    
-    
     
      func updateWeek(change: String){
         if change == "dec"{

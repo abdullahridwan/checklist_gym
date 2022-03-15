@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DateItem: Codable {
+struct DateItem {
     var day: Date
     var dayID: UUID
     var progress: Float

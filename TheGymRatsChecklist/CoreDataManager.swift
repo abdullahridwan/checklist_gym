@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 
 
-
 class CoreDataManager{
     let persistentContainer: NSPersistentContainer
     static let shared = CoreDataManager()
@@ -45,9 +44,9 @@ class CoreDataManager{
     }
     
     
-    func getAllDates() -> [DateItem]{
+    func getAllDates() -> [InfoModel]{
         //make a request
-        let request = NSFetchRequest<DateItem>(entityName: "DayModelItem")
+        let request = NSFetchRequest<InfoModel>(entityName: "InfoModel")
         //execute request
         do{
             return try viewContext.fetch(request)
@@ -55,15 +54,11 @@ class CoreDataManager{
             return []
         }
     }
-    
-    
-    
-    func updateToDo(t: DateItem ){
-        //update the ToDoItem based on its nsmanagedobjectid
-        //save view context
+    func updateToDo(t: InfoModel ){
         save()
     }
-    func deleteToDo(t: DateItem){
+    
+    func deleteToDo(t: InfoModel){
         viewContext.delete(t)
         save()
     }

@@ -22,7 +22,7 @@ class CalendarInfo: ObservableObject{
     @Published var weekDays: Array<Int> = [Int]()
     @Published var monthName: String = "Getting..."
     @Published var todaysDate: Int = 0
-    @Published var allTasks: [DateItem] = [DateItem]()
+    @Published var allTasks: [DateItem] = [DateItem]() //
     
     
     func getTodaysDate() -> String {
@@ -148,6 +148,14 @@ class CalendarInfo: ObservableObject{
     func createInfoModel(){}
     
     
+    /**Given monthName and the date they pressed, returns the tasks and completetion status for that day **/
+    func getTasksForDay(){
+        //take in self.monthName and datePressed
+        //Create a date from that
+        //find the first DateItem from CoreData with same Date
+        //use [getItemsAndCompletion] to get that dates tasks and stuff
+    }
+
     
 
     

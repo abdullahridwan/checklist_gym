@@ -24,15 +24,14 @@ class CoreDataManager{
         }
     }
     
-    //Helper Functions
     
-//    func getToDoByID(tid: NSManagedObjectID) -> ToDoItem? {
-//        do{
-//            return try viewContext.existingObject(with: tid) as? ToDoItem
-//        } catch {
-//            return nil
-//        }
-//    }
+    func getToDoByID(tid: NSManagedObjectID) -> InfoModel? {
+        do{
+            return try viewContext.existingObject(with: tid) as? InfoModel
+        } catch {
+            return nil
+        }
+    }
     
     //Main Functionst
     func save(){

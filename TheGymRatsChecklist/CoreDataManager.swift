@@ -34,7 +34,7 @@ class CoreDataManager{
 //        }
 //    }
     
-    //Main Functions
+    //Main Functionst
     func save(){
         do{
             try viewContext.save()

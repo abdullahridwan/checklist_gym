@@ -40,6 +40,10 @@ struct CalendarView: View {
             })
         }
     }
+    
+    
+    
+    
 }
 
 struct CalendarView_Previews: PreviewProvider {
@@ -102,10 +106,12 @@ struct WeekDayNumbersComponent: View {
                         .foregroundColor(calendarInfo.getTodaysMonth() == calendarInfo.monthName && d == datePressed ? Color.red : Color.black)
                         .onTapGesture {
                             datePressed = d
+                            
                         }
                 }
             }
         }
     }
 }
+
 

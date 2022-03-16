@@ -220,13 +220,6 @@ class CalendarInfo: ObservableObject{
         }
         return Float(count) / Float(tasks.count)
     }
-    
 
-    
-
-
-    
-
-    
     
 }

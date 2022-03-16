@@ -10,6 +10,7 @@ import SwiftUI
 struct HomePage: View {
     //@EnvironmentObject var calendarInfo: CalendarInfo
     @State var items:[String] = ["Creatine", "Weights", "Biotin"]
+    var completionStatus: [String] = [String]()
     @State private var addIemSheet: Bool = false
     
     var body: some View {
@@ -39,13 +40,35 @@ struct HomePage: View {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     EditButton()
                 })
+                ToolbarItem(placement: .principal, content: {
+                    Button(action: {}, label: {
+                        Text("Log")
+                            .foregroundColor(Color.red)
+                    })
+                })
             })
+            
         }
     }
 
     func delete(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
     }
+    
+    
+    /** Parameters:
+        Return: Void
+        --
+        Description: Turns the current list os [items] into a string combined with "," and wheter they are completed or not as well. Then, makes a new DateItem from that Info. 
+     */
+    
+    /** Parameters:
+        Return: Void
+        --
+        Description: Turn DateItem to InfoModel and turn 
+     */
+    
+    
 }
 
 struct HomePage_Previews: PreviewProvider {

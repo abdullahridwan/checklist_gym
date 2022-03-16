@@ -10,7 +10,7 @@ import SwiftUI
 struct HomePage: View {
     //@EnvironmentObject var calendarInfo: CalendarInfo
     @State var items:[String] = ["Creatine", "Weights", "Biotin"]
-    var completionStatus: [String] = [String]()
+    @State var completionStatus: [Bool] = [Bool]()
     @State private var addIemSheet: Bool = false
     
     var body: some View {
@@ -22,9 +22,16 @@ struct HomePage: View {
                         Text(item)
                         Spacer()
                     }
+                    .onTapGesture(perform: {
+                        completionStatus[items.firstIndex(of: item) ?? 0] = true
+                        //toggleValue(b: completionStatus[items.firstIndex(of: item) ?? 0])
+                    })
                 }
                 .onDelete(perform: delete)
             }
+            .onAppear(perform: {
+                completionStatus = Array(repeating: false, count: items.count)
+            })
             .navigationTitle("Today")
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading, content: {
@@ -46,11 +53,27 @@ struct HomePage: View {
                             .foregroundColor(Color.red)
                     })
                 })
+                
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    Button(action: {
+                        print("items")
+                        print(items)
+                        print("\nCompletion Status")
+                        print(completionStatus)
+                    }, label: {
+                        Text("Log Info")
+                    })
+                })
+                
             })
-            
         }
     }
+                                    
 
+    func toggleValue(b: Bool) -> Bool{
+        return !b
+    }
+    
     func delete(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
     }

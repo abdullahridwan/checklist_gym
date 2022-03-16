@@ -34,8 +34,11 @@ struct CalendarView: View {
                             Circle()
                                 .strokeBorder(Color.black, lineWidth: 1)
                                 .background(item.completion == "T" ? Circle().fill(Color("C2")) : Circle().fill(Color.white))
+                                .opacity(0.8)
                                 .frame(width: 15, height: 15)
                             Text(item.task)
+                                .foregroundColor(Color.black)
+                                .opacity(0.8)
                             Spacer()
                         }
                     }

@@ -10,7 +10,6 @@ import Foundation
 struct DateItem {
     var day: Date
     var dayID: UUID
-    var progress: Float
     var tasks: [String]
     var whichDone: [String]
 }
@@ -120,7 +119,7 @@ class CalendarInfo: ObservableObject{
     func getDateItem(dateOn: Date) -> DateItem {
         let indexOfDate = allTasks.firstIndex{ $0.day == dateOn } ?? -1
         if (indexOfDate == -1){
-            return DateItem(day: dateOn, dayID: UUID(), progress: 0.0, tasks: [randomString(of: 5), randomString(of: 5), randomString(of: 5)], whichDone: ["F", "T", "F"])
+            return DateItem(day: dateOn, dayID: UUID(), tasks: [randomString(of: 5), randomString(of: 5), randomString(of: 5)], whichDone: ["F", "T", "F"])
         }else{
             return allTasks[indexOfDate]
         }
@@ -197,10 +196,10 @@ class CalendarInfo: ObservableObject{
         Description: Takes in [InfoModel] and maps it to [DateItem]. Requires parsing [InfoModel].tasks and [InfoModel].whichDone
      */
     func mapEntityToDateItem(){
-//        allTasks = CoreDataManager.shared.getAllDates().map{ (InfoModel) -> DateItem in
-//            return DateItem(day: InfoModel.day ?? Date(), dayID: InfoModel.dayID ?? UUID(), progress: InfoModel.progress, tasks: getList(str: InfoModel.tasks ?? "None"), whichDone: getList(str: InfoModel.whichDone ?? "None"))
-//        }
-        allTasks = [DateItem(day: Date(), dayID: UUID(), progress: 0.05, tasks: [randomString(of: 5)], whichDone: ["T"])] //for testing purposes
+        allTasks = CoreDataManager.shared.getAllDates().map{ (InfoModel) -> DateItem in
+            return DateItem(day: InfoModel.day ?? Date(), dayID: InfoModel.dayID ?? UUID(), tasks: getList(str: InfoModel.tasks ?? "None"), whichDone: getList(str: InfoModel.whichDone ?? "None"))
+        }
+        //allTasks = [DateItem(day: Date(), dayID: UUID(), tasks: [randomString(of: 5)], whichDone: ["T"])] //for testing purposes
     }
     
     

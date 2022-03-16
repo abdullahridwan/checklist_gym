@@ -3,11 +3,10 @@
     <entity name="InfoModel" representedClassName="InfoModel" syncable="YES" codeGenerationType="class">
         <attribute name="day" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dayID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="progress" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="tasks" optional="YES" attributeType="String" customClassName="[String]"/>
         <attribute name="whichDone" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="InfoModel" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="InfoModel" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

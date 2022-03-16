@@ -15,6 +15,11 @@ struct DateItem {
     var whichDone: [String]
 }
 
+struct TaskAndStatus: Hashable {
+    var task: String
+    var completion: String
+}
+
 
 
 class CalendarInfo: ObservableObject{
@@ -23,6 +28,10 @@ class CalendarInfo: ObservableObject{
     @Published var monthName: String = "Getting..."
     @Published var todaysDate: Int = 0
     @Published var allTasks: [DateItem] = [DateItem]() //
+    
+    init(){
+        mapEntityToDateItem()
+    }
     
     func getTodaysDate() -> String {
         let format = DateFormatter()
@@ -34,7 +43,7 @@ class CalendarInfo: ObservableObject{
     // Note sure what this is used for tbh
     func getTodaysMonth() -> String {
         let format = DateFormatter()
-        format.dateFormat = "MMMM"
+        format.dateFormat = "LLLL, YYYY"
         let formattedDate = format.string(from: Date())
         return formattedDate
     }
@@ -98,7 +107,7 @@ class CalendarInfo: ObservableObject{
         dateComponents.month = monthsArr.firstIndex(of: items[0]) ?? 0 + 1 //march with indexing starting at 1?tnotion
         dateComponents.day = datePressed
         let createdDate: Date = Calendar.current.date(from: dateComponents) ?? Date.now
-        
+        print("\n[createdDateFromPress] \(createdDate)")
         return createdDate
     }
     
@@ -109,27 +118,49 @@ class CalendarInfo: ObservableObject{
         Description: Find first instance of DateItem given the Date Input. Return that first instance.
      */
     func getDateItem(dateOn: Date) -> DateItem {
-        let indexOfDate = allTasks.firstIndex{ $0.day == dateOn }!
-        return allTasks[indexOfDate]
+        let indexOfDate = allTasks.firstIndex{ $0.day == dateOn } ?? -1
+        if (indexOfDate == -1){
+            return DateItem(day: dateOn, dayID: UUID(), progress: 0.0, tasks: [randomString(of: 5), randomString(of: 5), randomString(of: 5)], whichDone: ["F", "T", "F"])
+        }else{
+            return allTasks[indexOfDate]
+        }
     }
     
     
     /** Input: DateItem
-        Return: [(String, String)]
+        Return: [TaskAndStatus]
         --
         Description: Parses the [tasks] and [whichDone] fields and returns such that .0 is the task and .1 is wheter it was completed or not.
      */
-    func getItemsAndCompletion(dateItem: DateItem) -> [(String, String)]{
-        var ret: [(String, String)] = []
+    func getItemsAndCompletion(dateItem: DateItem) -> [TaskAndStatus]{
+        var imm: [(String, String)] = []
+        var ret: [TaskAndStatus] = [TaskAndStatus]()
         for task in dateItem.tasks{
-            ret.append((task, ""))
+            imm.append((task, ""))
         }
         for n in 0..<dateItem.whichDone.count {
             if(n <= dateItem.tasks.count){
-                ret[n].1 = dateItem.whichDone[n]
+                imm[n].1 = dateItem.whichDone[n]
             }
         }
+        
+        for item in imm {
+            ret.append(TaskAndStatus(task: item.0, completion: item.1))
+        }
         return ret
+    }
+    
+    
+    /** Parameters:
+            - datePressed: Int  - From CalendarView
+        Return: [TaskAndStatus]
+        --
+        Description: Takes in [datePressed] and [self.monthName] and returns the tasks for that date
+    */
+    func getTasksForADate(datePressed: Int) -> [TaskAndStatus]{
+        let dateValue = createDateFromPress(datePressed: datePressed)
+        let dateItemValue = getDateItem(dateOn: dateValue)
+        return getItemsAndCompletion(dateItem: dateItemValue)
     }
     
     
@@ -147,27 +178,44 @@ class CalendarInfo: ObservableObject{
         return str.components(separatedBy: ",")
     }
     
+    
+    
+    
+    func randomString(of length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var s = ""
+        for _ in 0 ..< length {
+            s.append(letters.randomElement()!)
+        }
+        return s
+    }
+    
+    
     /** Input: [InfoModel]
         Return: [DateItem]
         --
         Description: Takes in [InfoModel] and maps it to [DateItem]. Requires parsing [InfoModel].tasks and [InfoModel].whichDone
      */
     func mapEntityToDateItem(){
-        allTasks = CoreDataManager.shared.getAllDates().map{ (InfoModel) -> DateItem in
-            return DateItem(day: InfoModel.day!, dayID: InfoModel.dayID!, progress: InfoModel.progress, tasks: getList(str: InfoModel.tasks!), whichDone: getList(str: InfoModel.whichDone!))
-        }
+//        allTasks = CoreDataManager.shared.getAllDates().map{ (InfoModel) -> DateItem in
+//            return DateItem(day: InfoModel.day ?? Date(), dayID: InfoModel.dayID ?? UUID(), progress: InfoModel.progress, tasks: getList(str: InfoModel.tasks ?? "None"), whichDone: getList(str: InfoModel.whichDone ?? "None"))
+//        }
+        allTasks = [DateItem(day: Date(), dayID: UUID(), progress: 0.05, tasks: [randomString(of: 5)], whichDone: ["T"])] //for testing purposes
     }
     
     
-    /** Input: [(String, String)]
+    /** Parameters:
+            - datePressed: Int
+            - monthName: String
         Return: Float
         --
         Description: Number of Tasks Completed / Total Number of Tasks
      */
-    func calculateProgress(tasks: [(String, String )]) -> Float {
+    func calculateProgress(datePressed: Int) -> Float {
+        let tasks = getTasksForADate(datePressed: datePressed)
         var count = 0
         for task in tasks{
-            if(task.1 == "T"){
+            if(task.completion == "T"){
                 count += 1
             }
         }

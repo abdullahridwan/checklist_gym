@@ -12,6 +12,13 @@ struct CalendarView: View {
     var sevenColumnGrid: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     let dateFormatter = DateFormatter()
     @State var datePressed: Int = 0
+    @State var tasksForDay: [TaskAndStatus] = [TaskAndStatus]()
+    
+//    init() {
+//        UITableView.appearance().separatorStyle = .singleLine
+//        UITableViewCell.appearance().backgroundColor = .white
+//        UITableView.appearance().backgroundColor = .white
+//    }
     
     var body: some View {
         NavigationView {
@@ -20,12 +27,38 @@ struct CalendarView: View {
                     .padding(.top)
                 WeekDayNamesComponent(sevenColumnGrid: sevenColumnGrid)
                 
-                WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, sevenColumnGrid: sevenColumnGrid)
+                WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, tasksForDay: $tasksForDay, sevenColumnGrid: sevenColumnGrid)
+                LazyVStack{
+                    ForEach(tasksForDay, id: \.self){item in
+                        HStack{
+                            Circle()
+                                .strokeBorder(Color.black, lineWidth: 1)
+                                .background(item.completion == "T" ? Circle().fill(Color("C2")) : Circle().fill(Color.white))
+                                .frame(width: 15, height: 15)
+                            Text(item.task)
+                            Spacer()
+                        }
+                    }
+                }
+                .padding()
+                .padding(.top, 10)
+//                List{
+//                    ForEach(tasksForDay, id: \.self){taskItem in
+//                        HStack{
+//                            TappableCircle()
+//                            Text(taskItem.task)
+//                            Spacer()
+//                        }
+//                    }
+//                }
+//                Spacer()
             }
             .padding(.horizontal)
             .onAppear(perform: {
+                calendarInfo.mapEntityToDateItem()
                 calendarInfo.updateWeek(change: "none")
                 datePressed = calendarInfo.todaysDate
+                tasksForDay = calendarInfo.getTasksForADate(datePressed: datePressed)
             })
             .navigationTitle("Calendar")
             .toolbar(content: {
@@ -37,6 +70,22 @@ struct CalendarView: View {
                         Image(systemName: "house")
                     })
                 })
+                
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    Button(action: {
+                        print("All Tasks: ")
+                        print(calendarInfo.allTasks)
+                        print("\nDatePressed")
+                        print(datePressed)
+                        print("\nTasks for Today:")
+                        print(tasksForDay)
+                    }, label: {
+                        Image(systemName: "gear")
+                    })
+                })
+                
+                
+                
             })
         }
     }
@@ -62,6 +111,7 @@ struct MonthAndButons: View {
         HStack{
             Button(action: {
                 calendarInfo.updateWeek(change: "dec")
+                
             }, label: {
                 Image(systemName: "chevron.left")
             })
@@ -96,17 +146,17 @@ struct WeekDayNamesComponent: View {
 struct WeekDayNumbersComponent: View {
     @EnvironmentObject var calendarInfo: CalendarInfo
     @Binding var datePressed: Int
+    @Binding var tasksForDay: [TaskAndStatus]
     var sevenColumnGrid: [GridItem]
     var body: some View {
         LazyVGrid(columns: sevenColumnGrid, spacing: 20){
             ForEach(calendarInfo.weekDays, id:\.self){d in
                 VStack {
-                    //Text(String(d))
-                    DisplayDate(dateNum: d, progress: 0.50)
+                    DisplayDate(dateNum: d, progress: calendarInfo.calculateProgress(datePressed: datePressed))
                         .foregroundColor(calendarInfo.getTodaysMonth() == calendarInfo.monthName && d == datePressed ? Color.red : Color.black)
                         .onTapGesture {
                             datePressed = d
-                            
+                            tasksForDay = calendarInfo.getTasksForADate(datePressed: datePressed)
                         }
                 }
             }

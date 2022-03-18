@@ -18,14 +18,10 @@ struct HomePage: View {
             List{
                 ForEach(items, id:\.self){item in
                     HStack{
-                        TappableCircle()
+                        TappableCircle(index: items.firstIndex(of: item) ?? 0, completionStatus: $completionStatus)
                         Text(item)
                         Spacer()
                     }
-                    .onTapGesture(perform: {
-                        completionStatus[items.firstIndex(of: item) ?? 0] = true
-                        //toggleValue(b: completionStatus[items.firstIndex(of: item) ?? 0])
-                    })
                 }
                 .onDelete(perform: delete)
             }

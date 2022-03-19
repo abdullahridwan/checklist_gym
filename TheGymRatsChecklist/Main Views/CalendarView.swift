@@ -29,6 +29,13 @@ struct CalendarView: View {
                 
                 WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, tasksForDay: $tasksForDay, sevenColumnGrid: sevenColumnGrid)
                 LazyVStack{
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                        })
+                    }
                     ForEach(tasksForDay, id: \.self){item in
                         HStack{
                             Circle()

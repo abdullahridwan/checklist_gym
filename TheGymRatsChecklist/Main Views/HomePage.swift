@@ -23,6 +23,9 @@ struct HomePage: View {
                         Spacer()
                     }
                 }
+                .onMove { indexSet, offset in
+                    items.move(fromOffsets: indexSet, toOffset: offset)
+                }
                 .onDelete(perform: delete)
             }
             .onAppear(perform: {

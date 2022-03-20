@@ -220,6 +220,15 @@ class CalendarInfo: ObservableObject{
         }
         return Float(count) / Float(tasks.count)
     }
+    
+    
+    /** Parameters:
+            - datePressed: Int
+            - monthName: String
+        Return: Float
+        --
+        Description: Update the list of items, and T/F for the date pressed
+     */
 
     
 }

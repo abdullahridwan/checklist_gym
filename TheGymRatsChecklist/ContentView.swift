@@ -13,7 +13,10 @@ struct ContentView: View {
     //@EnvironmentObject var calendarInfo: CalendarInfo
     var body: some View {
         TabView{
-
+            History().environmentObject(calendarInfo)
+                .tabItem({
+                    Label("Update", systemImage:"clock")
+                })
             CalendarView().environmentObject(calendarInfo)
                 .tabItem({
                     Label("History", systemImage: "pencil")

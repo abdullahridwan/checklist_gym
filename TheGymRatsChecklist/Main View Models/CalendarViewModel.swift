@@ -227,8 +227,12 @@ class CalendarInfo: ObservableObject{
             - monthName: String
         Return: Float
         --
-        Description: Update the list of items, and T/F for the date pressed
+        Description: Update the list of items and T/F Status
      */
+    func updateItemsForSpecificDate(d: Date){
+        let dateItem = getDateItem(dateOn: d)
+        
+    }
 
     
 }

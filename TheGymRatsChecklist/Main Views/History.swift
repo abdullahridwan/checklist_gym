@@ -11,6 +11,7 @@ struct History: View {
     @EnvironmentObject var calendarInfo: CalendarInfo
     @State var selectedDate: Date = Date()
     @State var selectedItems: [String] = [String]()
+    @State var itemStatus: [Bool] = [Bool]()
     @State var confirmationSheet: Bool = false
     
     
@@ -23,7 +24,18 @@ struct History: View {
                     
                     Section("List", content: {
                         List($selectedItems, id: \.self){$item in
-                            TextField("Title", text: $item)
+                            HStack {
+                                TextField("Write in an item...", text: $item)
+                                Spacer()
+                                Button(action: {
+                                    if let index = selectedItems        .firstIndex(of: item) {
+                                        selectedItems.remove(at: index)
+                                    }
+                                }, label: {
+                                    Image(systemName: "minus.circle")
+                                        .foregroundColor(Color.red)
+                                })
+                            }
                         }
 
                         Button(action: {
@@ -38,7 +50,12 @@ struct History: View {
                 }
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
-                        Button(action: {}, label: {
+                        Button(action: {
+                            //log all the items for that date and save
+
+                            confirmationSheet.toggle()
+                            //reset view to current date
+                        }, label: {
                             Text("Done")
                         })
                     })

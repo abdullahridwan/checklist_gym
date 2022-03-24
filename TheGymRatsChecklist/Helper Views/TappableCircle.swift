@@ -28,6 +28,13 @@ struct TappableCircle: View {
             }
             ConfettiCannon(counter: $counter, num: 5, openingAngle: Angle.degrees(1.0), radius: 40.0)
         }
+        .onChange(of: fillCircle){newValue in
+            if newValue {
+                allTasks[index].completion = "T"
+            }else{
+                allTasks[index].completion = "F"
+            }
+        }
             
     }
     

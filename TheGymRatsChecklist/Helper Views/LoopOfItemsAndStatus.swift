@@ -19,6 +19,12 @@ struct LoopOfItemsAndStatus: View {
                     Spacer()
                 }
             }
+            .onMove { indexSet, offset in
+                tasksForDay.move(fromOffsets: indexSet, toOffset: offset)
+            }
+            .onDelete { indexSet in
+                tasksForDay.remove(atOffsets: indexSet)
+            }
         }
         .onAppear() {
             UITableView.appearance().backgroundColor = UIColor.clear
@@ -30,6 +36,6 @@ struct LoopOfItemsAndStatus: View {
 
 struct LoopOfItemsAndStatus_Previews: PreviewProvider {
     static var previews: some View {
-        LoopOfItemsAndStatus(tasksForDay: .constant([TaskAndStatus(task: "something", completion: "T")]))
+        LoopOfItemsAndStatus(tasksForDay: .constant([TaskAndStatus(task: "something", completion: "T"), TaskAndStatus(task: "something", completion: "T")]))
     }
 }

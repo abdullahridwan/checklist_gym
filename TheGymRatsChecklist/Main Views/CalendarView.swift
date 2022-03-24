@@ -23,22 +23,16 @@ struct CalendarView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("purp").edgesIgnoringSafeArea(.all)
+                Color("Background").edgesIgnoringSafeArea(.all)
                 VStack{
                     MonthAndButons(calendarInfo: _calendarInfo)
                         .padding(.top)
+                    
                     WeekDayNamesComponent(sevenColumnGrid: sevenColumnGrid)
                     
                     WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, tasksForDay: $tasksForDay, sevenColumnGrid: sevenColumnGrid)
                     
-                    
                     LoopOfItemsAndStatus(tasksForDay: $tasksForDay)
-                    
-//                    .onAppear() {
-//                        UITableView.appearance().backgroundColor = UIColor.clear
-//                        UITableViewCell.appearance().backgroundColor = UIColor.clear
-//                    }
-                    
                 }
                 .padding(.horizontal)
                 .onAppear(perform: {
@@ -51,7 +45,7 @@ struct CalendarView: View {
                 })
                 .navigationTitle("Calendar")
                 .toolbar(content: {
-                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                    ToolbarItem(placement: .navigationBarLeading, content: {
                         Button(action: {
                             calendarInfo.updateWeek(change: "zero")
                             datePressed = calendarInfo.todaysDate
@@ -59,12 +53,15 @@ struct CalendarView: View {
                             Image(systemName: "house")
                         })
                     })
-                    
-
-                    
-                    
-                    
-            })
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button(action: {
+                            tasksForDay.append(TaskAndStatus(task: "", completion: "F"))
+                        }, label: {Image(systemName: "plus")})
+                    })
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        EditButton()
+                    })
+                })
             }
         }
     }

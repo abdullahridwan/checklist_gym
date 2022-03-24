@@ -27,6 +27,7 @@ struct TestListInForm: View {
                             someList.remove(atOffsets: indexSet)
                         }
                         
+                        
                     })
                 }
             .navigationTitle("Form test")
@@ -35,6 +36,7 @@ struct TestListInForm: View {
                     EditButton()
                 })
             })
+            
         }
     }
 }

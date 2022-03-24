@@ -10,7 +10,7 @@ import ConfettiSwiftUI
 
 struct TappableCircle: View {
     var index: Int
-    @Binding var completionStatus: [Bool]
+    @Binding var allTasks: [TaskAndStatus]
     @State var fillCircle: Bool = false
     @State var counter:Int = 0
 
@@ -24,20 +24,29 @@ struct TappableCircle: View {
                 .onTapGesture {
                     counter += 1
                     fillCircle.toggle()
-                    toggleCompletionStatus(completionStatus: completionStatus, idx: index)
+                    toggleCompletionStatus(completionStatus: allTasks, idx: index)
             }
             ConfettiCannon(counter: $counter, num: 5, openingAngle: Angle.degrees(1.0), radius: 40.0)
         }
             
     }
     
-    func toggleCompletionStatus(completionStatus: [Bool], idx: Int){
-        self.completionStatus[idx] = !self.completionStatus[idx]
+    func toggleCompletionStatus(completionStatus: [TaskAndStatus], idx: Int){
+        //index range check
+        if idx >= allTasks.count{
+            return 
+        }
+        
+        if self.allTasks[idx].completion == "F" {
+            self.allTasks[idx].completion = "T"
+        }else{
+            self.allTasks[idx].completion = "F"
+        }
     }
 }
 
 struct TappableCircle_Previews: PreviewProvider {
     static var previews: some View {
-        TappableCircle(index: 0, completionStatus: .constant([false, false]))
+        TappableCircle(index: 2, allTasks: .constant([TaskAndStatus(task: "T1", completion: "T"), TaskAndStatus(task: "t2", completion: "F")]))
     }
 }

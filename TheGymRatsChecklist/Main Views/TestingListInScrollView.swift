@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TestingListInScrollView: View {
-    @State var someList: [String] = ["Creatine", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water"]
+    @State var someList: [String] = ["Creatine", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water"]
     var body: some View {
         NavigationView {
             
             ZStack {
-                Color.red
+                Color("purp")
                     //.edgesIgnoringSafeArea(.all)
                     .ignoresSafeArea()
                 VStack {

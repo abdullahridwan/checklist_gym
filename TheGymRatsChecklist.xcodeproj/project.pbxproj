@@ -32,6 +32,8 @@
 		B5C8EA4A27D9BC48001B3938 /* TheGymRatsChecklistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA4927D9BC48001B3938 /* TheGymRatsChecklistUITests.swift */; };
 		B5C8EA4C27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA4B27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift */; };
 		B5C8EA5927DAA55D001B3938 /* TappableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8EA5827DAA55D001B3938 /* TappableCircle.swift */; };
+		B5D6673C27ECC3B300F31051 /* LoopOfItemsAndCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6673B27ECC3B300F31051 /* LoopOfItemsAndCompletion.swift */; };
+		B5D6673E27ECC58600F31051 /* LoopOfItemsAndStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6673D27ECC58600F31051 /* LoopOfItemsAndStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		B5C8EA4927D9BC48001B3938 /* TheGymRatsChecklistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistUITests.swift; sourceTree = "<group>"; };
 		B5C8EA4B27D9BC48001B3938 /* TheGymRatsChecklistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGymRatsChecklistUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B5C8EA5827DAA55D001B3938 /* TappableCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableCircle.swift; sourceTree = "<group>"; };
+		B5D6673B27ECC3B300F31051 /* LoopOfItemsAndCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopOfItemsAndCompletion.swift; sourceTree = "<group>"; };
+		B5D6673D27ECC58600F31051 /* LoopOfItemsAndStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopOfItemsAndStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				B59A078B27E6D4B200807D74 /* History.swift */,
 				B586C6A627EC2559001CB9C6 /* TestListInForm.swift */,
 				B586C6A827EC29BB001CB9C6 /* TestingListInScrollView.swift */,
+				B5D6673B27ECC3B300F31051 /* LoopOfItemsAndCompletion.swift */,
+				B5D6673D27ECC58600F31051 /* LoopOfItemsAndStatus.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -348,12 +354,14 @@
 				B567FDEB27DEEC75004B3914 /* CalendarView.swift in Sources */,
 				B59A078C27E6D4B200807D74 /* History.swift in Sources */,
 				B5C8EA5927DAA55D001B3938 /* TappableCircle.swift in Sources */,
+				B5D6673C27ECC3B300F31051 /* LoopOfItemsAndCompletion.swift in Sources */,
 				B5C8EA3127D9BC46001B3938 /* ContentView.swift in Sources */,
 				B586C6A727EC2559001CB9C6 /* TestListInForm.swift in Sources */,
 				B567FDFA27E00B70004B3914 /* DisplayDate.swift in Sources */,
 				B567FE0427E02B43004B3914 /* ItemViewModel.swift in Sources */,
 				B567FDE427DEE975004B3914 /* SettingsPage.swift in Sources */,
 				B567FE0027E02509004B3914 /* Database.xcdatamodeld in Sources */,
+				B5D6673E27ECC58600F31051 /* LoopOfItemsAndStatus.swift in Sources */,
 				B567FDDD27DE68B8004B3914 /* AddItemSheet.swift in Sources */,
 				B567FDF827DFCFDF004B3914 /* CalendarViewModel.swift in Sources */,
 				B5C349DE27E28BF700B19DDE /* CD_CRUD.swift in Sources */,

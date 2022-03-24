@@ -22,81 +22,50 @@ struct CalendarView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical){
-                MonthAndButons(calendarInfo: _calendarInfo)
-                    .padding(.top)
-                WeekDayNamesComponent(sevenColumnGrid: sevenColumnGrid)
-                
-                WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, tasksForDay: $tasksForDay, sevenColumnGrid: sevenColumnGrid)
-                LazyVStack{
-//                    HStack{
-//                        Spacer()
-//                        Button(action: {
-//                        }, label: {
-//                            Image(systemName: "plus")
-//                        })
+            ZStack {
+                Color("purp").edgesIgnoringSafeArea(.all)
+                VStack{
+                    MonthAndButons(calendarInfo: _calendarInfo)
+                        .padding(.top)
+                    WeekDayNamesComponent(sevenColumnGrid: sevenColumnGrid)
+                    
+                    WeekDayNumbersComponent(calendarInfo: _calendarInfo, datePressed: $datePressed, tasksForDay: $tasksForDay, sevenColumnGrid: sevenColumnGrid)
+                    
+                    
+                    LoopOfItemsAndStatus(tasksForDay: $tasksForDay)
+                    
+//                    .onAppear() {
+//                        UITableView.appearance().backgroundColor = UIColor.clear
+//                        UITableViewCell.appearance().backgroundColor = UIColor.clear
 //                    }
-                    ForEach(tasksForDay, id: \.self){item in
-                        HStack{
-                            Circle()
-                                .strokeBorder(Color.black.opacity(0.7), lineWidth: 1)
-                                .background(item.completion == "T" ? Circle().fill(Color("C2")) : Circle().fill(Color.white))
-                                .opacity(0.8)
-                                .frame(width: 15, height: 15)
-                            Text(item.task)
-                                .foregroundColor(Color.black.opacity(0.7))
-                                .opacity(0.8)
-                            Spacer()
-                        }
-                    }
+                    
                 }
-                .padding()
-                .padding(.top, 10)
-//                List{
-//                    ForEach(tasksForDay, id: \.self){taskItem in
-//                        HStack{
-//                            TappableCircle()
-//                            Text(taskItem.task)
-//                            Spacer()
-//                        }
-//                    }
-//                }
-//                Spacer()
+                .padding(.horizontal)
+                .onAppear(perform: {
+                    UITableView.appearance().backgroundColor = UIColor.clear
+                    UITableViewCell.appearance().backgroundColor = UIColor.clear
+                    calendarInfo.mapEntityToDateItem()
+                    calendarInfo.updateWeek(change: "none")
+                    datePressed = calendarInfo.todaysDate
+                    tasksForDay = calendarInfo.getTasksForADate(datePressed: datePressed)
+                })
+                .navigationTitle("Calendar")
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button(action: {
+                            calendarInfo.updateWeek(change: "zero")
+                            datePressed = calendarInfo.todaysDate
+                        }, label: {
+                            Image(systemName: "house")
+                        })
+                    })
+                    
+
+                    
+                    
+                    
+            })
             }
-            .padding(.horizontal)
-            .onAppear(perform: {
-                calendarInfo.mapEntityToDateItem()
-                calendarInfo.updateWeek(change: "none")
-                datePressed = calendarInfo.todaysDate
-                tasksForDay = calendarInfo.getTasksForADate(datePressed: datePressed)
-            })
-            .navigationTitle("Calendar")
-            .toolbar(content: {
-                ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {
-                        calendarInfo.updateWeek(change: "zero")
-                        datePressed = calendarInfo.todaysDate
-                    }, label: {
-                        Image(systemName: "house")
-                    })
-                })
-                
-                ToolbarItem(placement: .navigationBarLeading, content: {
-                    Button(action: {
-                        print("All Tasks: ")
-                        print(calendarInfo.allTasks)
-                        print("\nDatePressed")
-                        print(datePressed)
-                        print("\nTasks for Today:")
-                        print(tasksForDay)
-                    }, label: {
-                        Image(systemName: "gear")
-                    })
-                })
-                
-                
-                
-            })
         }
     }
     

@@ -18,7 +18,7 @@ struct HomePage: View {
             List{
                 ForEach(items, id:\.self){item in
                     HStack{
-                        TappableCircle(index: items.firstIndex(of: item) ?? 0, completionStatus: $completionStatus)
+//                        TappableCircle(index: items.firstIndex(of: item) ?? 0, completionStatus: $completionStatus)
                         Text(item)
                         Spacer()
                     }

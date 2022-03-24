@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TestListInForm: View {
     @State var selectedDate: Date = Date()
-    @State var someList: [String] = ["Creatine", "Water"]
+    @State var someList: [String] = ["Creatine", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water"]
 
     var body: some View {
         NavigationView {
@@ -17,7 +17,8 @@ struct TestListInForm: View {
                     DatePicker("Choose a Date", selection: $selectedDate, displayedComponents: .date)
                     Section("List", content: {
                         ForEach($someList, id:\.self){$someItem in
-                            Text(someItem)
+                            //Text(someItem)
+                            TextField("\(someItem)", text: $someItem)
                         }
                         .onMove { indexSet, offset in
                             someList.move(fromOffsets: indexSet, toOffset: offset)

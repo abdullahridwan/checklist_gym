@@ -229,10 +229,10 @@ class CalendarInfo: ObservableObject{
         --
         Description: Update the list of items and T/F Status
      */
-    func updateItemsForSpecificDate(d: Date){
-        let dateItem = getDateItem(dateOn: d)
-        
-    }
+//    func updateItemsForSpecificDate(d: Date){
+//        let dateItem = getDateItem(dateOn: d)
+//        
+//    }
 
     
 }

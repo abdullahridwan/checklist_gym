@@ -1,5 +1,4 @@
 # checklist_gym
-one day build
 Basically, wanted a checklist to keep track of some health-related things I wanted to do every single day. 
 
 
